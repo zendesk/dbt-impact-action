@@ -48,7 +48,8 @@ runs:
         DEBUG_MODE: ${{ inputs.debug_mode }}
 
     # Post a comment on the PR.
-    - uses: marocchino/sticky-pull-request-comment@v2.5.0
+    # Customized in our Zendesk version to avoid using a GitHub action not forked by Zendesk
+    - uses: zendesk/sticky-pull-request-comment@v2.6.2
       with:
         header: acryl-impact-analysis-${{ inputs.dbt_project_folder }}
         message: ${{ steps.impact-analysis.outputs.IMPACT_ANALYSIS_MD }}
