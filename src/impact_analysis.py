@@ -23,7 +23,7 @@ def get_graph() -> DataHubGraph:
     DATAHUB_TOKEN: Optional[str] = os.getenv("DATAHUB_GMS_TOKEN")
 
     graph = DataHubGraph(
-        DatahubClientConfig(server=DATAHUB_SERVER, token=DATAHUB_TOKEN)
+        DatahubClientConfig(server=DATAHUB_SERVER, token=DATAHUB_TOKEN, timeout_sec=300)
     )
 
     return graph
